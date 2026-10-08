@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NetSage AI | Network Intelligence</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">N</div><div><strong>NetSage</strong><span>AI Network Intelligence</span></div></div>
+    <nav>
+      <a class="active" href="#diagnose"><span>⌁</span> Diagnose</a>
+      <a href="#review"><span>✓</span> Human Review</a>
+      <a href="#analytics"><span>◈</span> Analytics</a>
+      <a href="#about"><span>i</span> About</a>
+    </nav>
+    <div class="safety"><div class="shield">✓</div><div><b>Human-in-the-loop</b><small>No fix is accepted automatically.</small></div></div>
+    <div class="side-foot">Created by Toshni Shah · NetSage AI · Applied AI + Network Troubleshooting</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><div class="eyebrow">APPLIED AI / NETWORK TROUBLESHOOTING</div><h1>Network intelligence, without blind fixes.</h1><p>Diagnose Cisco-style lab incidents using evidence, deterministic checks and human review.</p></div>
+      <div class="live"><i></i> Local engine online</div>
+    </header>
+
+    <section class="hero-grid" id="diagnose">
+      <div class="card case-card">
+        <div class="card-head"><div><span class="step">01</span><h2>Choose an incident</h2></div><span class="pill">30+ cases</span></div>
+        <div class="search-wrap"><span>⌕</span><input id="caseSearch" placeholder="Search VLAN, DHCP, DNS, ACL..." oninput="filterCases()"></div>
+        <select id="caseSelect"><option value="">Select a troubleshooting case...</option>{% for c in cases %}<option value="{{c.case_id}}" data-search="{{c.issue_type}} {{c.short_title}} {{c.symptom}}">{{c.case_id}} · {{c.issue_type}} · {{c.short_title}}</option>{% endfor %}</select>
+        <div id="casePreview" class="case-preview empty"><span class="pulse-dot"></span><span>Select a case to preview the evidence.</span></div>
+        <button class="primary" onclick="diagnose()"><span>Run AI diagnosis</span><b>→</b></button>
+      </div>
+
+      <div class="card diagnosis-card">
+        <div class="card-head"><div><span class="step">02</span><h2>AI diagnosis</h2></div><span id="engineBadge" class="pill muted">Waiting</span></div>
+        <div id="result" class="diagnosis-empty"><div class="ai-orbit"><div class="orbit-dot"></div><span>AI</span></div><h3>Evidence in. Insight out.</h3><p>Run a diagnosis to see root cause, confidence, OSI layer, evidence and the safest next command.</p></div>
+      </div>
+    </section>
+
+    <section class="workflow" id="review">
+      <div class="section-title"><div><span class="step">03</span><h2>Human review gate</h2></div><p>AI proposes. You decide.</p></div>
+      <div class="review-grid card">
+        <div class="review-status"><label>Decision</label><div class="decision-buttons"><button class="decision selected" data-status="Accepted" onclick="setDecision(this)">✓ Accept</button><button class="decision" data-status="Edited" onclick="setDecision(this)">✎ Edit</button><button class="decision" data-status="Rejected" onclick="setDecision(this)">× Reject</button></div></div>
+        <div><label>Correct fault / reviewer note</label><input id="acceptedFault" placeholder="Add correction or reviewer reasoning..."><textarea id="note" placeholder="Why was the AI answer accepted, edited or rejected?"></textarea></div>
+        <div class="review-action"><div id="reviewMsg" class="review-msg">Review is required before a fix is accepted.</div><button class="secondary" onclick="review()">Save review <span>↗</span></button></div>
+      </div>
+    </section>
+
+    <section id="analytics">
+      <div class="section-title"><div><span class="step">04</span><h2>Operational dashboard</h2></div><p>Live project evidence</p></div>
+      <div id="stats" class="stats-grid"></div>
+    </section>
+
+    <section class="insight-grid" id="about">
+      <div class="card mini-card"><div class="icon cyan">⌁</div><h3>Evidence-first</h3><p>Symptoms and show-command evidence stay attached to every diagnosis.</p></div>
+      <div class="card mini-card"><div class="icon violet">◇</div><h3>Deterministic checks</h3><p>Python rules catch common configuration mistakes before risky changes.</p></div>
+      <div class="card mini-card"><div class="icon green">✓</div><h3>Responsible AI</h3><p>Accepted, edited and rejected decisions create an auditable review trail.</p></div>
+    </section>
+    <footer>NetSage AI · Applied AI + Network Troubleshooting · Built for lab learning and human-supervised diagnosis</footer>
+  </main>
+</div>
+<script src="/static/app.js"></script>
+</body></html>

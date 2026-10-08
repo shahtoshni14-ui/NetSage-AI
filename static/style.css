@@ -1,0 +1,154 @@
+:root{--bg:#07111f;--panel:#0d1a2c;--panel2:#101f34;--line:#20334d;--text:#edf6ff;--muted:#91a6be;--cyan:#47d7ff;--violet:#9b7cff;--green:#53e0a0;--red:#ff7185;--shadow:0 24px 70px #0008}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 70% -10%,#19345c 0,transparent 35%),var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text)}button,input,select,textarea{font:inherit}.app-shell{display:flex;min-height:100vh}.sidebar{width:250px;background:#081321;border-right:1px solid var(--line);padding:26px 18px;position:fixed;top:0;bottom:0;display:flex;flex-direction:column}.brand{display:flex;gap:12px;align-items:center;padding:4px 8px 34px}.brand-mark{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:20px;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#07111f;box-shadow:0 8px 30px #47d7ff33}.brand strong{display:block;font-size:17px}.brand span{display:block;color:var(--muted);font-size:10px;margin-top:3px}.sidebar nav{display:grid;gap:7px}.sidebar nav a{color:#9db0c6;text-decoration:none;padding:12px 13px;border-radius:11px;display:flex;gap:12px;align-items:center;font-size:13px}.sidebar nav a.active,.sidebar nav a:hover{background:#13243a;color:white}.sidebar nav a.active{box-shadow:inset 3px 0 var(--cyan)}.safety{margin-top:auto;padding:14px;border:1px solid #1e3953;background:#0c1b2d;border-radius:14px;display:flex;gap:10px}.shield{width:30px;height:30px;border-radius:9px;background:#12352c;color:var(--green);display:grid;place-items:center}.safety b{display:block;font-size:11px}.safety small{display:block;color:var(--muted);font-size:9px;line-height:1.4;margin-top:3px}.side-foot{color:#58708a;font-size:9px;line-height:1.7;padding:18px 7px 2px}.main{margin-left:250px;width:calc(100% - 250px);padding:34px 5vw 30px}.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:30px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--cyan);font-weight:800}.topbar h1{font-size:38px;line-height:1.08;margin:8px 0 9px;max-width:760px}.topbar p{margin:0;color:var(--muted);font-size:14px}.live{border:1px solid #24415d;background:#0b1929;padding:10px 13px;border-radius:999px;color:#a9bdd1;font-size:11px;white-space:nowrap}.live i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);margin-right:7px}.hero-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:18px}.card{background:linear-gradient(145deg,#0e1d31eF,#0a1728eF);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.case-card,.diagnosis-card{padding:22px;min-height:410px}.card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.card-head>div{display:flex;gap:12px;align-items:center}.step{font-size:10px;color:var(--cyan);font-weight:900;letter-spacing:1px}.card h2,.section-title h2{font-size:18px;margin:0}.pill{font-size:9px;padding:7px 10px;border-radius:999px;border:1px solid #29425e;color:#b9cce0;background:#0c1b2c}.pill.muted{color:#71869e}.search-wrap{display:flex;align-items:center;border:1px solid var(--line);background:#081524;border-radius:11px;padding:0 12px;margin-bottom:9px}.search-wrap span{color:#68819a;font-size:20px}.search-wrap input{border:0!important;background:transparent!important;margin:0!important;padding:11px 8px!important}.case-card select{width:100%;background:#091727;color:#dbe9f6;border:1px solid var(--line);padding:13px;border-radius:11px;outline:none}.case-preview{min-height:80px;margin:13px 0;padding:13px;border-radius:12px;background:#091827;border:1px solid #1b314a;color:#a8bad0;font-size:11px;line-height:1.5;display:flex;gap:9px;align-items:flex-start}.case-preview.empty{align-items:center}.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px var(--cyan);margin-top:4px;flex:none}.primary,.secondary{width:100%;border:0;border-radius:11px;padding:13px 15px;font-weight:800;cursor:pointer}.primary{display:flex;justify-content:space-between;background:linear-gradient(100deg,#16a8d4,#775be8);color:white;box-shadow:0 12px 30px #3d8be82b}.secondary{background:#12263d;color:#dff4ff;border:1px solid #2a4764}.primary:hover,.secondary:hover{transform:translateY(-1px)}.diagnosis-empty{height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px}.ai-orbit{width:76px;height:76px;border:1px solid #31587a;border-radius:50%;display:grid;place-items:center;position:relative;margin-bottom:18px;background:radial-gradient(circle,#173453,#091725)}.ai-orbit:before{content:"";position:absolute;inset:-9px;border:1px dashed #31587a;border-radius:50%;animation:spin 8s linear infinite}.orbit-dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--cyan);top:2px;left:50%;box-shadow:0 0 16px var(--cyan)}.ai-orbit span{font-weight:900;color:var(--cyan)}.diagnosis-empty h3{margin:0 0 6px}.diagnosis-empty p{max-width:410px;color:var(--muted);font-size:12px;line-height:1.6}.result{font-size:12px}.result-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:10px}.metric{padding:13px;border:1px solid #203a55;background:#091827;border-radius:12px}.metric small{color:#6f879f;display:block;font-size:9px;text-transform:uppercase;letter-spacing:1px}.metric b{display:block;margin-top:6px;font-size:13px}.evidence{display:grid;gap:7px}.finding{padding:9px 10px;background:#0a1b2d;border-left:2px solid var(--cyan);border-radius:8px;color:#b7c9db;font-size:10px}.fixes{margin:8px 0 0;padding-left:18px;color:#c5d6e7;font-size:11px;line-height:1.7}.safety-note{margin-top:10px;padding:9px 10px;border-radius:9px;background:#102c26;color:#88ddb9;font-size:10px}.workflow{margin-top:25px}.section-title{display:flex;justify-content:space-between;align-items:center;margin:0 2px 10px}.section-title>div{display:flex;gap:12px;align-items:center}.section-title p{color:#607991;font-size:10px}.review-grid{padding:18px;display:grid;grid-template-columns:1fr 1.3fr .7fr;gap:16px;align-items:end}label{display:block;color:#7189a2;text-transform:uppercase;letter-spacing:1px;font-size:8px;margin-bottom:8px}.decision-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.decision{border:1px solid var(--line);background:#0a1828;color:#8299b1;padding:10px 7px;border-radius:9px;font-size:10px;cursor:pointer}.decision.selected{border-color:#3b718b;background:#103047;color:#dff8ff}.review-grid input,.review-grid textarea{width:100%;background:#081624;border:1px solid var(--line);color:white;border-radius:9px;padding:10px;outline:none}.review-grid textarea{height:54px;margin-top:7px;resize:vertical}.review-action{display:flex;flex-direction:column;gap:9px}.review-msg{font-size:9px;color:#688098;line-height:1.4}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat-card{padding:18px;position:relative;overflow:hidden}.stat-card:after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;right:-35px;top:-35px;background:#47d7ff12}.stat-card small{color:#688099;font-size:9px;text-transform:uppercase;letter-spacing:1px}.stat-card b{font-size:27px;margin:8px 0 4px;display:block}.stat-card span{font-size:9px;color:#7990a8}.bars{margin-top:12px;display:flex;align-items:end;gap:4px;height:35px}.bar{flex:1;background:linear-gradient(to top,var(--cyan),var(--violet));border-radius:3px 3px 0 0;min-height:4px}.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.mini-card{padding:18px}.icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-weight:900;margin-bottom:12px}.icon.cyan{background:#0d3040;color:var(--cyan)}.icon.violet{background:#251b42;color:var(--violet)}.icon.green{background:#12372e;color:var(--green)}.mini-card h3{margin:0 0 6px;font-size:13px}.mini-card p{margin:0;color:#7289a1;font-size:10px;line-height:1.6}footer{text-align:center;color:#486078;font-size:9px;padding:25px 0 5px}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:1000px){.sidebar{width:70px}.brand div:not(.brand-mark),.sidebar nav a:not(.active),.safety div:not(.shield),.side-foot{display:none}.sidebar nav a{justify-content:center}.main{margin-left:70px;width:calc(100% - 70px)}.hero-grid,.review-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.main{padding:22px 12px}.topbar h1{font-size:27px}.live{display:none}.stats-grid,.insight-grid{grid-template-columns:1fr}.sidebar{display:none}.main{margin:0;width:100%}}
+/* Gemini diagnosis content fix */
+.diagnosis-card,
+.ai-diagnosis,
+#diagnosisPanel {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+}
+
+.fix-steps,
+.recommended-fix,
+.fix-path {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+.fix-steps li,
+.recommended-fix li,
+.fix-path li {
+    margin-bottom: 14px;
+    line-height: 1.6;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+#diagnosisPanel {
+    padding-bottom: 30px;
+}
+
+.human-review,
+.review-gate {
+    margin-top: 30px;
+}
+/* =====================================================
+   NETSAGE AI - FINAL DIAGNOSIS OVERFLOW FIX
+   ===================================================== */
+
+/* Allow the diagnosis container to grow with Gemini output */
+#result,
+#result * {
+    box-sizing: border-box;
+}
+
+#result {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: relative !important;
+    padding-bottom: 25px !important;
+}
+
+/* Result cards must not have fixed heights */
+#result .result-grid,
+#result .metric {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Evidence */
+#result .evidence {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Fix list */
+#result .fixes {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+
+    margin-top: 15px !important;
+    margin-bottom: 25px !important;
+    padding-left: 32px !important;
+
+    line-height: 1.7 !important;
+}
+
+#result .fixes li {
+    height: auto !important;
+    min-height: 0 !important;
+    margin-bottom: 16px !important;
+
+    line-height: 1.7 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+}
+
+/* Safety note should remain below the fix list */
+#result .safety-note {
+    position: relative !important;
+    display: block !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin-top: 20px !important;
+    margin-bottom: 25px !important;
+
+    overflow: visible !important;
+    white-space: normal !important;
+    line-height: 1.6 !important;
+}
+
+/* Diagnosis sections */
+#result .diagnosis-section {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+
+    margin-top: 18px !important;
+    margin-bottom: 22px !important;
+}
+
+/* IMPORTANT:
+   Any panel containing the diagnosis must be allowed
+   to expand vertically.
+*/
+section:has(#result),
+.panel:has(#result),
+.card:has(#result),
+.diagnosis-panel:has(#result),
+.diagnosis-card:has(#result) {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Push Human Review safely below diagnosis */
+#result ~ *,
+#result + * {
+    margin-top: 35px !important;
+}
+
+/* Human review heading/section */
+.human-review,
+.review-gate,
+.review-section {
+    position: relative !important;
+    z-index: 5 !important;
+    clear: both !important;
+    margin-top: 40px !important;
+}
