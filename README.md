@@ -1,24 +1,58 @@
-# NetSage AI — Applied AI + Network Troubleshooting
+# 🌐 NetSage AI
 
-An AI-assisted troubleshooting helper for Cisco-style Packet Tracer/lab network problems. It combines a case dataset, deterministic Python checks, an explainable diagnosis engine, human review, and a dashboard.
+## AI-Assisted Cisco Network Troubleshooting with Human-in-the-Loop Validation
 
-## Run
-```bash
-python -m venv venv
-# Windows: venv\\Scripts\\activate
-# macOS/Linux: source venv/bin/activate
-pip install -r requirements.txt
-python app.py
-```
-Open http://127.0.0.1:5000
+> **AI proposes. Human reviews.**
 
-## Optional real AI
-Set `GEMINI_API_KEY` in your environment. The app can call Gemini through the modern `google-genai` package. Without a key, the local evidence/rule engine produces a clearly labelled fallback diagnosis so the demo remains functional.
+NetSage AI is an **Applied AI + Network Troubleshooting** web application designed to assist students and learners in diagnosing Cisco-style networking lab incidents.
 
-## Project deliverables
-- `data/cases.csv`: 30 cases across VLAN, gateway, DHCP, DNS, routing, ACL, NAT and wireless.
-- `prompts/diagnose_prompt.md`: structured JSON diagnosis prompt.
-- `app/rule_checker.py`: deterministic configuration checks.
-- Dashboard: issue types, severity and AI-vs-human agreement.
-- Responsible AI log: corrected/edited cases.
-- Demo workflow: diagnose → review → fix/verify.
+The system takes network symptoms and Cisco `show` command evidence, analyzes the available information, identifies a probable root cause, recommends the next diagnostic command, and provides a suggested remediation path.
+
+Instead of allowing AI to make configuration changes automatically, NetSage AI places a **Human Review Gate** between diagnosis and remediation.
+
+# 🎯 Problem Statement
+
+Network troubleshooting often requires connecting multiple pieces of technical evidence:
+
+- Network symptoms
+- VLAN configuration
+- IP addressing
+- Default gateways
+- DHCP configuration
+- DNS behavior
+- Routing information
+- ACL rules
+- NAT configuration
+- Wireless configuration
+- Cisco `show` command outputs
+
+For students and beginners, identifying the actual root cause and deciding which diagnostic command to run next can be difficult.
+
+Generative AI can help with troubleshooting, but relying on AI alone can lead to incorrect assumptions or unsafe recommendations.
+
+### NetSage AI addresses this by combining:
+
+**Evidence + Deterministic Checks + AI Assistance + Human Review**
+
+# 💡 Solution
+
+NetSage AI provides a structured troubleshooting workflow:
+
+```text
+Network Incident
+       ↓
+Symptoms + Cisco Evidence
+       ↓
+Python Deterministic Checks
+       ↓
+AI-Assisted Diagnosis
+       ↓
+Root Cause + Confidence
+       ↓
+Next Diagnostic Command
+       ↓
+Recommended Fix Path
+       ↓
+Human Review Gate
+       ↓
+Accept / Edit / Reject
