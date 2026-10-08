@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NetSage AI — Network Troubleshooting</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">N</div><div><div class="brand-name">NetSage</div><div class="brand-sub">AI NETWORK INTELLIGENCE</div></div></div>
+  <nav>
+    <button class="nav active" data-view="diagnose">⌁ <span>Diagnose</span></button>
+    <button class="nav" data-view="review">✓ <span>Human Review</span></button>
+    <button class="nav" data-view="analytics">◈ <span>Analytics</span></button>
+    <button class="nav" data-view="about">ⓘ <span>About</span></button>
+  </nav>
+  <div class="side-note"><div class="tiny-label">SAFETY MODE</div><strong>Human-in-the-loop</strong><p>Recommendations are reviewed before a fix is accepted.</p></div>
+</aside>
+<main class="main">
+<header class="topbar"><div><span class="live-dot"></span> DEMO MODE · GITHUB PAGES</div><div><a href="https://github.com/shahtoshni14-ui/NetSage-AI" target="_blank">GitHub ↗</a></div></header>
+
+<section id="diagnose" class="view active">
+<div class="hero"><div class="eyebrow">APPLIED AI + NETWORK TROUBLESHOOTING</div><h1>Network intelligence,<br><span>without blind fixes.</span></h1><p>Evidence-first troubleshooting for Cisco-style lab incidents — with deterministic checks and a human review gate.</p></div>
+<div class="stats-row">
+<div class="stat"><span>CASES</span><b id="caseCount">31</b><small>troubleshooting scenarios</small></div>
+<div class="stat"><span>CATEGORIES</span><b id="categoryCount">8</b><small>network fault domains</small></div>
+<div class="stat"><span>REVIEWED</span><b id="reviewedCount">0</b><small>browser review records</small></div>
+<div class="stat"><span>AGREEMENT</span><b id="agreement">—</b><small>accepted / reviewed</small></div>
+</div>
+<div class="workspace">
+<section class="panel cases-panel"><div class="panel-head"><div><div class="panel-kicker">CASE LIBRARY</div><h2>Select an incident</h2></div><input id="search" placeholder="Search cases..."></div><div id="caseList" class="case-list"></div></section>
+<section class="panel detail-panel"><div id="caseDetail"></div><button id="runBtn" class="primary">Run Diagnosis <span>→</span></button><div id="result" class="result hidden"></div></section>
+</div>
+</section>
+
+<section id="review" class="view"><div class="page-title"><div class="eyebrow">HUMAN REVIEW GATE</div><h1>Review the recommendation.</h1><p>Accept, edit or reject each diagnosis. Review records are stored locally in this browser.</p></div><div class="review-grid"><div class="panel"><div class="panel-kicker">REVIEW QUEUE</div><div id="reviewList"></div></div><div class="panel" id="reviewEditor"><div class="empty">Run a diagnosis first, then review it here.</div></div></div></section>
+
+<section id="analytics" class="view"><div class="page-title"><div class="eyebrow">ANALYTICS</div><h1>See what the system is finding.</h1><p>Summary of the 31-case troubleshooting library and browser-side review decisions.</p></div><div class="analytics-grid"><div class="panel"><div class="panel-kicker">ISSUE DISTRIBUTION</div><div id="issueBars"></div></div><div class="panel"><div class="panel-kicker">REVIEW STATUS</div><div id="reviewBars"></div></div></div><div class="panel responsible"><div class="panel-kicker">RESPONSIBLE AI</div><div class="responsible-grid"><div><b>Evidence first</b><span>Recommendations reference supplied case evidence.</span></div><div><b>No automatic configuration</b><span>The demo never changes a router or switch.</span></div><div><b>Human oversight</b><span>Reviewers can accept, edit or reject a recommendation.</span></div><div><b>Deterministic checks</b><span>Rule-style checks provide reproducible findings.</span></div></div></div></section>
+
+<section id="about" class="view"><div class="page-title"><div class="eyebrow">NETSAGE AI</div><h1>AI proposes. Human reviews.</h1><p>An Applied AI + Network Troubleshooting project for Cisco-style lab scenarios.</p></div><div class="about-grid"><div class="panel"><div class="panel-kicker">PROJECT</div><h2>What NetSage AI does</h2><p>NetSage reads symptoms and Cisco-style show-command evidence, identifies a probable fault, highlights evidence, recommends the next diagnostic command and presents a safe remediation path.</p><p>This GitHub Pages build is a <strong>static interactive demo</strong>. It intentionally does not expose an API key. The full Flask/Gemini application remains in the repository.</p></div><div class="panel"><div class="panel-kicker">TECH STACK</div><div class="chips"><span>Python</span><span>Flask</span><span>Google Gemini</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Pandas</span></div><div class="panel-kicker gap">COVERAGE</div><p>31 structured cases across VLAN, Gateway, DHCP, DNS, Routing, ACL, NAT and Wireless troubleshooting.</p></div></div></section>
+<footer>Created by Toshni Shah · NetSage AI · Applied AI + Network Troubleshooting</footer>
+</main></div>
+<script src="app.js"></script>
+</body></html>
