@@ -50,32 +50,6 @@ function renderCaseList(filter = '') {
   });
 }
 
-// Display details of the selected case
-function renderCaseDetail() {
-  const c = CASES.find(x => x.id === selectedId);
-  if (!c) return;
-
-  $('#caseDetail').innerHTML = `
-    <div class="detail-header">
-      <div>
-        <div class="panel-kicker">${c.id} · ${esc(c.issue)}</div>
-        <h2>${esc(c.title)}</h2>
-      </div>
-      <div class="badge">${esc(c.severity)} severity</div>
-    </div>
-
-    <div class="field">
-      <label>SYMPTOM</label>
-      <p>${esc(c.symptom)}</p>
-    </div>
-
-    <div class="field">
-      <label>CISCO / LAB EVIDENCE</label>
-      <div class="evidence">${esc(c.evidence)}</div>
-    </div>
-  `;
-}
-
 // Deterministic diagnosis engine for the demo
 function diagnose(c) {
   return {
