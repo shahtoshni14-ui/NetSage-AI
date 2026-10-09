@@ -81,3 +81,4 @@ $('#search').oninput=e=>renderCaseList(e.target.value);
 $('#runBtn').onclick=renderDiagnosis;
 $('#caseCount').textContent=CASES.length; $('#categoryCount').textContent=new Set(CASES.map(c=>c.issue)).size;
 renderCaseList(); renderCaseDetail(); updateStats(); renderAnalytics();
+
