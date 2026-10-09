@@ -34,6 +34,24 @@ function renderCaseList(filter = '') {
         };
     });
 }
+        <div class="case-item ${c.id === selectedId ? 'active' : ''}" data-id="${c.id}">
+            <div class="case-top">
+                <span class="case-id">${c.id}</span>
+                <span class="tag">${c.issue}</span>
+            </div>
+            <div class="case-title">${esc(c.title)}</div>
+        </div>
+    `).join('') || '<div class="empty">No matching cases.</div>';
+
+    document.querySelectorAll('.case-item').forEach(el => {
+        el.onclick = () => {
+            selectedId = el.dataset.id;
+            renderCaseList($('#search').value);
+            renderCaseDetail();
+            $('#result').classList.add('hidden');
+        };
+    });
+}
 function renderCaseDetail(){
   const c=CASES.find(x=>x.id===selectedId);
   $('#caseDetail').innerHTML=`<div class="detail-header"><div><div class="panel-kicker">${c.id} · ${c.issue}</div><h2>${esc(c.title)}</h2></div><div class="badge">${c.severity} severity</div></div>
