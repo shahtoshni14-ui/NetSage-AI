@@ -331,7 +331,6 @@ renderAnalytics();
     if (btn.dataset.view === 'analytics') {
       renderAnalytics();
     }
-  };
 });
 
 $('#search').oninput = e => renderCaseList(e.target.value);
