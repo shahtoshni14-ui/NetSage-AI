@@ -90,10 +90,9 @@ document.querySelectorAll('.nav').forEach(btn => {
 
       if (Object.keys(reviews).length > 0) {
         openReview(Object.keys(reviews)[0]);
-      } else if (currentDiagnosis) {
+      } else {
         openReview(selectedId);
       }
-    }
 
     if (btn.dataset.view === 'analytics') {
       renderAnalytics();
