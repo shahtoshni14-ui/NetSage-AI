@@ -328,16 +328,19 @@ updateStats();
 renderAnalytics();
 
 
-    if (btn.dataset.view === 'analytics') {
-      renderAnalytics();
-    }
+
+if (btn.dataset.view === 'analytics') {
+    renderAnalytics();
+}
 });
 
 $('#search').oninput = e => renderCaseList(e.target.value);
 $('#runBtn').onclick = renderDiagnosis;
 
-$('#search').oninput=e=>renderCaseList(e.target.value);
-$('#runBtn').onclick=renderDiagnosis;
-$('#caseCount').textContent=CASES.length; $('#categoryCount').textContent=new Set(CASES.map(c=>c.issue)).size;
-renderCaseList(); renderCaseDetail(); updateStats(); renderAnalytics();
+$('#caseCount').textContent = CASES.length;
+$('#categoryCount').textContent = new Set(CASES.map(c => c.issue)).size;
 
+renderCaseList();
+renderCaseDetail();
+updateStats();
+renderAnalytics();
