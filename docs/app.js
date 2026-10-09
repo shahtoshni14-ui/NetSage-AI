@@ -72,11 +72,38 @@ function renderAnalytics(){
   const statuses=['Accepted','Edited','Rejected']; const total=Object.keys(reviews).length;
   $('#reviewBars').innerHTML=statuses.map(s=>{const v=Object.values(reviews).filter(x=>x.status===s).length;return `<div class="bar"><div class="bar-head"><span>${s}</span><b>${v}</b></div><div class="track"><div class="fill" style="width:${total?v/total*100:0}%"></div></div></div>`}).join('');
 }
-document.querySelectorAll('.nav').forEach(btn=>btn.onclick=()=>{
-  document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active')); btn.classList.add('active');
-  document.querySelectorAll('.view').forEach(x=>x.classList.remove('active')); $('#'+btn.dataset.view).classList.add('active');
-  if(btn.dataset.view==='review')renderReview(); if(btn.dataset.view==='analytics')renderAnalytics();
+
+document.querySelectorAll('.nav').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.nav').forEach(x =>
+      x.classList.remove('active')
+    );
+    btn.classList.add('active');
+
+    document.querySelectorAll('.view').forEach(x =>
+      x.classList.remove('active')
+    );
+    $(`#${btn.dataset.view}`).classList.add('active');
+
+    if (btn.dataset.view === 'review') {
+      renderReview();
+
+      if (Object.keys(reviews).length > 0) {
+        openReview(Object.keys(reviews)[0]);
+      } else if (currentDiagnosis) {
+        openReview(selectedId);
+      }
+    }
+
+    if (btn.dataset.view === 'analytics') {
+      renderAnalytics();
+    }
+  };
 });
+
+$('#search').oninput = e => renderCaseList(e.target.value);
+$('#runBtn').onclick = renderDiagnosis;
+
 $('#search').oninput=e=>renderCaseList(e.target.value);
 $('#runBtn').onclick=renderDiagnosis;
 $('#caseCount').textContent=CASES.length; $('#categoryCount').textContent=new Set(CASES.map(c=>c.issue)).size;
