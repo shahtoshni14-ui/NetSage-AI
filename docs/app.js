@@ -6,15 +6,33 @@ const reviews = JSON.parse(localStorage.getItem('netsage_reviews') || '{}');
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-function renderCaseList(filter=''){
-  const q=filter.toLowerCase();
-  const list=CASES.filter(c=>`${c.id} ${c.title} ${c.issue} ${c.symptom}`.toLowerCase().includes(q));
-  $('#caseList').innerHTML=list.map(c=>`<div class="case-item ${c.id===selectedId?'active':''}" data-id="${c.id}">
-    <div class="case-top"><span class="case-id">${c.id}</span><span class="tag">${c.issue}</span></div>
-    <div class="case-title">${esc(c.title)}</div></div>`).join('') || '<div class="empty">No matching cases.</div>';
-  document.querySelectorAll('.case-item').forEach(el=>el.onclick=()=>{
-    selectedId=el.dataset.id; renderCaseList($('#search').value); renderCaseDetail(); $('#result').classList.add('hidden');
-  });
+function renderCaseList(filter = '') {
+    const q = filter.toLowerCase();
+
+    const list = CASES.filter(c =>
+        `${c.id} ${c.title} ${c.issue} ${c.symptom}`
+            .toLowerCase()
+            .includes(q)
+    );
+
+    $('#caseList').innerHTML = list.map(c => `
+        <div class="case-item ${c.id === selectedId ? 'active' : ''}" data-id="${c.id}">
+            <div class="case-top">
+                <span class="case-id">${c.id}</span>
+                <span class="tag">${c.issue}</span>
+            </div>
+            <div class="case-title">${esc(c.title)}</div>
+        </div>
+    `).join('') || '<div class="empty">No matching cases.</div>';
+
+    document.querySelectorAll('.case-item').forEach(el => {
+        el.onclick = () => {
+            selectedId = el.dataset.id;
+            renderCaseList($('#search').value);
+            renderCaseDetail();
+            $('#result').classList.add('hidden');
+        };
+    });
 }
 function renderCaseDetail(){
   const c=CASES.find(x=>x.id===selectedId);
